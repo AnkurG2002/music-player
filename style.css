@@ -37,7 +37,13 @@ header .master_play {
     width: 100%;
     height: 10%;
     background-color: #11172794;
-    box-shadow: 0 5px 5px 5px blueviolet;
+    z-index: 99;
+    transition: 0.5s ease-in-out;
+}
+header .active_play {
+    z-index: 100;
+    box-shadow: 0 0 10px 5px blueviolet;
+    transition: 1s ease-in-out;
 }
 header .menu_side h1{
     font-size: 1.5rem;
@@ -168,20 +174,17 @@ header .master_play .wave .wave1 {
     height: 10px;
     background-color: cyan;
     margin-right: 3.5px;
-    animation: unset;
 }
 header .master_play .wave .wave1:nth-child(2) {
     height: 13px;
-    animation-delay: 0.4s;
 }
 header .master_play .wave .wave1:nth-child(3) {
     height: 8px;
-    animation-delay: 0.8s;
 }
 
 /* JavaScript Classes */
 header .master_play .active1 .wave1 {
-    animation-delay: wave 0.5s infinite;
+    animation: wave 0.5s infinite;
 }
 header .master_play .active1 .wave1:nth-child(2) {
     animation-delay: 0.4s;
@@ -236,21 +239,22 @@ header .master_play span {
     font-weight: 600;
     color: white;
     width: 40px;
+    letter-spacing: 1px;
 }
 header .master_play .seek_bar {
     position: relative;
-    width: 40%;
+    width: 35%;
     height: 2px;
-    background-color: #111d31;
+    background-color: azure;
     margin: 0 15px 0 10px;
 }
 header .master_play .seek_bar .bar {
     position: absolute;
     background-color: cyan;
-    width: 50%;
+    width: 0;
     height: 100%;
     top: 0;
-    transition: 1s linear;
+    transition: 0.1s ease;
 }
 header .master_play .seek_bar .dot {
     position: absolute;
@@ -260,7 +264,7 @@ header .master_play .seek_bar .dot {
     top: -3px;
     left: 0;
     border-radius: 50%;
-    transition: 1s linear;
+    transition: 0.1s ease;
 }
 header .master_play .seek_bar .dot::before {
     position: absolute;
@@ -268,10 +272,10 @@ header .master_play .seek_bar .dot::before {
     width: 15px;
     height: 15px; 
     top: -4.5px;
-    left: -4.5px;
+    left: -60%;
     border: 1px solid cyan;
     border-radius: 50%;
-    box-shadow: 0 0 5px inset cyan;
+    box-shadow: 0 0 10px inset cyan;
 }
 header .master_play .seek_bar input {
     position: absolute;
@@ -287,7 +291,7 @@ header .master_play .volume {
     position: relative;
     width: 100px;
     height: 2px;
-    background-color: #111d31;
+    background-color: azure;
     margin-left: 40px;
 }
 header .master_play .volume .bi {
@@ -308,9 +312,9 @@ header .master_play .volume input {
 header .master_play .volume .vol_bar {
     position: absolute;
     background-color: cyan;
-    width: 50%;
+    width: 70%;
     height: 100%;
-    transition: 1s linear;
+    transition: 0.1s ease 
 }
 header .master_play .volume .dot {
     position: absolute;
@@ -318,9 +322,9 @@ header .master_play .volume .dot {
     width: 8px;
     height: 8px;
     top: -3px;
-    left: 0;
+    left: 70%;
     border-radius: 50%;
-    transition: 1s linear;
+    transition: 0.1s ease;
 }
 header .master_play .volume .dot::before {
     position: absolute;
@@ -328,10 +332,15 @@ header .master_play .volume .dot::before {
     width: 15px;
     height: 15px; 
     top: -4.5px;
-    left: -4.5px;
+    left: -60%;
     border: 1px solid cyan;
     border-radius: 50%;
-    box-shadow: 0 0 5px inset cyan;
+    box-shadow: 0 0 10px inset cyan;
+}
+
+header .master_play #vol_per {
+    display: inline-block;
+    margin-left: 20px;
 }
 
 header .song_side {
